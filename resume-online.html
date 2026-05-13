@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>徐龙威 | 在线简历</title>
+  <style>
+    :root {
+      --bg: #f7f8f4;
+      --paper: #ffffff;
+      --text: #1b2428;
+      --muted: #66767b;
+      --line: rgba(86, 100, 108, 0.16);
+      --accent: #0f766e;
+      --accent-deep: #0b4f4a;
+      --shadow: 0 20px 50px rgba(25, 37, 42, 0.08);
+      --radius: 22px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #fcfcfa 0%, #f5f5f0 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin: 0; }
+
+    .page {
+      width: min(calc(100% - 24px), var(--max));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .topbar,
+    .section,
+    .hero {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar {
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero {
+      margin-top: 20px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 18px 32px rgba(27, 36, 40, 0.12);
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin-top: 10px;
+      font-size: clamp(34px, 6vw, 46px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--accent-deep);
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 24px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .entry {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .entry-head strong {
+      font-size: 18px;
+    }
+
+    .entry-head span {
+      color: var(--accent-deep);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .entry p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .cta {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+      color: #fff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <strong>徐龙威</strong>
+        <div class="mini">Online Resume</div>
+      </div>
+      <a class="cta" href="./index.html">返回个人网站</a>
+    </div>
+
+    <section class="hero">
+      <img class="avatar" src="./avatar.jpg" alt="徐龙威头像">
+      <div>
+        <div class="mini">Resume Summary</div>
+        <h1>徐龙威</h1>
+        <p>品牌营销背景，正在转向 AI 产品经理实习方向。关注大模型、RAG、Agent 等 AI 应用场景，擅长需求分析、结构化表达与跨团队协同推进。</p>
+        <div class="meta">
+          <span>15958457667</span>
+          <span>1078732873@qq.com</span>
+          <span>中国科学技术大学 · 物流工程与管理</span>
+          <span>兰州大学 · 市场营销</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>教育背景</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <strong>中国科学技术大学 · 物流工程与管理</strong>
+          <span>2025.09 - 2028.07</span>
+        </div>
+        <p>硕士在读。</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <strong>兰州大学 · 市场营销</strong>
+          <span>2017.09 - 2021.07</span>
+        </div>
+        <p>管理学学士。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>工作经历</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <strong>紫光集团旗下新华三集团 · 品牌营销部 · 体验营销专员</strong>
+          <span>2021.09 - 2022.12</span>
+        </div>
+        <ul>
+          <li>负责新华三云屏项目的产品包装与版本迭代协同，主导产品讲解词、核心卖点包装及宣发内容策划，支持新品发布与客户拓展。</li>
+          <li>面向重点客户完成产品演示、需求沟通与场景化方案讲解，沉淀客户反馈并反哺产品优化，强化产品价值传递与客户认知。</li>
+          <li>协同研发推进版本迭代、Bug 跟踪与问题闭环，整理并反馈优化需求，推动功能持续完善与产品体验提升。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>项目经历</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <strong>租房帮助中心 AI 问答助手</strong>
+          <span>AI 产品项目</span>
+        </div>
+        <p><strong>项目角色：</strong>需求分析 / AI 产品方案设计 / 指标评估设计</p>
+        <p><strong>项目背景：</strong>面向租房帮助中心高频 FAQ 场景，目标是将原本返回文章列表的帮助中心升级为可以直接给出结论与下一步动作的 AI 问答入口。</p>
+        <ul>
+          <li><strong>需求分析：</strong>围绕租房帮助中心高频 FAQ 场景完成用户问题拆解与首期范围收敛，明确费用、签约、入住、退租四类核心问题，降低帮助中心“看完仍不会做”的使用门槛。</li>
+          <li><strong>方案设计：</strong>定义 AI 回答结构为“结论 + 条件说明 + 下一步动作 + 引用来源”，并基于私域规则知识依赖采用 RAG 思路设计方案，提升回答可执行性与信息可信度。</li>
+          <li><strong>评估闭环：</strong>围绕解决率、转人工率、点踩率、响应时长与 bad case 分类设计评估体系，为后续定位召回、生成和兜底问题提供清晰优化依据。</li>
+          <li><strong>项目价值：</strong>完成项目页与原型设计，搭建回答结构、RAG 方案、指标体系与 bad case 分类，并形成一轮围绕召回、生成与兜底策略的优化方案。</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <strong>面向工商管理教学的智能化课堂平台</strong>
+          <span>AI 教学产品项目</span>
+        </div>
+        <p><strong>项目角色：</strong>产品设计 / 需求分析 / 智能教学场景设计</p>
+        <p><strong>项目背景：</strong>围绕工商管理教学中的课堂互动、学习支持、成果考核与案例实训需求，设计服务教师、学生和管理员三类角色的一体化智能教学平台。</p>
+        <ul>
+          <li><strong>需求分析：</strong>梳理教学组织、AI 问答、作业评估、案例模拟、讨论互动与后台管理等核心场景，明确平台需覆盖的教学辅助、过程管理与成果评价链路。</li>
+          <li><strong>方案设计：</strong>设计用户认证与角色分级、课堂问答、教学工作台、成果评价、多语言展示等模块，形成面向教师、学生和管理员的一体化产品方案。</li>
+          <li><strong>落地协同：</strong>结合 OpenAI 兼容接口、评分服务本地回退、多语言模板与容器化部署方案，梳理从功能设计到工程落地的实现路径。</li>
+          <li><strong>项目价值：</strong>推动平台从单点功能走向可落地教学工作台，增强课堂互动、成果评价与案例实训的一体化支撑能力。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>个人技能</h2>
+      <div class="entry">
+        <p>掌握 MySQL、Python 基本技能；具备大模型、RAG、Agent 相关场景理解，能够围绕需求分析、产品方案设计、评估闭环与跨团队协同进行项目表达。</p>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
