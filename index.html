@@ -6,23 +6,24 @@
   <title>徐龙威 | 个人网站</title>
   <style>
     :root {
-      --bg: #f5f5f1;
-      --bg-soft: #fbfbf8;
-      --surface: rgba(255, 255, 255, 0.86);
+      --bg: #f8f8f4;
+      --bg-soft: #fcfcf8;
+      --surface: rgba(255, 255, 255, 0.92);
       --surface-strong: #ffffff;
-      --text: #172126;
-      --muted: #617076;
-      --line: rgba(76, 95, 102, 0.14);
+      --text: #182126;
+      --muted: #66737c;
+      --line: rgba(24, 33, 38, 0.09);
       --accent: #0f766e;
       --accent-deep: #0b4f4a;
-      --accent-soft: rgba(15, 118, 110, 0.11);
+      --accent-soft: rgba(15, 118, 110, 0.07);
       --project-blue: #2e6bff;
       --project-blue-deep: #1746c8;
-      --project-blue-soft: rgba(46, 107, 255, 0.12);
-      --shadow: 0 24px 70px rgba(28, 49, 57, 0.10);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
+      --project-blue-soft: rgba(46, 107, 255, 0.08);
+      --shadow: 0 22px 52px rgba(28, 49, 57, 0.07);
+      --shadow-soft: 0 10px 22px rgba(28, 49, 57, 0.04);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
       --max: 1200px;
     }
 
@@ -34,15 +35,19 @@
       scroll-behavior: smooth;
     }
 
+    section[id] {
+      scroll-margin-top: 110px;
+    }
+
     body {
       margin: 0;
       min-width: 320px;
       color: var(--text);
       font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(15, 118, 110, 0.11), transparent 28%),
-        radial-gradient(circle at 85% 12%, rgba(190, 225, 220, 0.45), transparent 22%),
-        linear-gradient(180deg, #fcfcf8 0%, #f5f5f1 45%, #efefe9 100%);
+        radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.06), transparent 20%),
+        radial-gradient(circle at 92% 8%, rgba(46, 107, 255, 0.05), transparent 16%),
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 46%, #f2f2ec 100%);
     }
 
     a {
@@ -69,11 +74,11 @@
       justify-content: space-between;
       gap: 18px;
       padding: 14px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.88);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 16px 50px rgba(24, 45, 52, 0.07);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-soft);
     }
 
     .brand {
@@ -140,7 +145,7 @@
     .button-primary {
       background: linear-gradient(135deg, var(--accent-deep), var(--accent));
       color: #fff;
-      box-shadow: 0 16px 32px rgba(15, 118, 110, 0.18);
+      box-shadow: 0 12px 28px rgba(15, 118, 110, 0.16);
     }
 
     .button-secondary {
@@ -151,34 +156,49 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.05fr 1.15fr;
-      gap: 28px;
+      grid-template-columns: 0.76fr 1.24fr;
+      gap: 18px;
       margin-top: 28px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .hero-right {
       display: grid;
-      gap: 18px;
+      gap: 12px;
+      align-content: start;
     }
 
     .card {
-      border: 1px solid rgba(255, 255, 255, 0.82);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.84);
       border-radius: var(--radius-xl);
       background: var(--surface);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(12px);
       box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(15, 118, 110, 0.20), rgba(46, 107, 255, 0.08), transparent 72%);
+      pointer-events: none;
     }
 
     .project-window {
-      padding: 18px;
+      padding: 14px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.88)),
+        radial-gradient(circle at 12% 0%, rgba(46, 107, 255, 0.05), transparent 28%);
     }
 
     .window-bar {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 2px 4px 18px;
+      padding: 2px 4px 14px;
       color: var(--muted);
       font-size: 12px;
     }
@@ -192,62 +212,62 @@
 
     .window-layout {
       display: grid;
-      grid-template-columns: 162px 1fr;
-      min-height: 520px;
+      grid-template-columns: 126px 1fr;
+      min-height: 372px;
       overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(92, 120, 165, 0.12);
-      background: var(--surface-strong);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(24, 33, 38, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 251, 249, 0.92));
     }
 
     .sidebar {
-      padding: 20px 14px;
-      background: linear-gradient(180deg, #f6f7f4 0%, #eef1ed 100%);
-      border-right: 1px solid rgba(92, 120, 165, 0.1);
+      padding: 16px 10px;
+      background: linear-gradient(180deg, rgba(247, 248, 245, 0.72) 0%, rgba(240, 243, 239, 0.60) 100%);
+      border-right: 1px solid rgba(24, 33, 38, 0.06);
     }
 
     .sidebar-label {
-      color: var(--muted);
-      font-size: 12px;
+      color: rgba(97, 112, 118, 0.72);
+      font-size: 10px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .step-list {
       display: grid;
-      gap: 10px;
+      gap: 8px;
     }
 
     .step {
       display: block;
-      padding: 11px 12px;
-      border-radius: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
+      padding: 9px 9px;
+      border-radius: 10px;
+      color: rgba(97, 112, 118, 0.86);
+      font-size: 11px;
+      line-height: 1.4;
       transition: transform 160ms ease, background 160ms ease, color 160ms ease;
     }
 
     .step:hover,
     .step:focus-visible {
-      transform: translateX(2px);
-      color: var(--accent-deep);
-      background: rgba(255, 255, 255, 0.72);
+      transform: translateX(1px);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.52);
     }
 
     .step.active {
-      color: #fff;
-      background: linear-gradient(135deg, var(--project-blue-deep), var(--project-blue));
-      box-shadow: 0 14px 26px rgba(46, 107, 255, 0.18);
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 249, 247, 0.88));
+      box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.10);
     }
 
     .project-body {
-      padding: 26px 28px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 24px;
+      gap: 14px;
     }
 
     .eyebrow {
@@ -255,38 +275,39 @@
       align-items: center;
       gap: 8px;
       width: fit-content;
-      padding: 8px 12px;
+      padding: 7px 12px;
       border-radius: 999px;
-      background: var(--project-blue-soft);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(46, 107, 255, 0.08));
+      border: 1px solid rgba(46, 107, 255, 0.08);
       color: var(--project-blue-deep);
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.04em;
     }
 
     .project-body h2 {
-      margin-top: 16px;
-      font-size: clamp(34px, 4vw, 48px);
-      line-height: 1.03;
+      margin-top: 12px;
+      font-size: clamp(23px, 2.5vw, 32px);
+      line-height: 1.08;
       letter-spacing: -0.04em;
-      max-width: 10ch;
+      max-width: 9.5ch;
     }
 
     .project-body p {
-      margin-top: 16px;
+      margin-top: 12px;
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
-      max-width: 34ch;
+      line-height: 1.58;
+      font-size: 12.5px;
+      max-width: 31ch;
     }
 
     .project-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .hero-copy {
-      padding: 10px 0;
+      padding: 2px 0 0;
     }
 
     .mini-label {
@@ -305,99 +326,144 @@
     }
 
     .lead {
-      margin-top: 18px;
+      margin-top: 10px;
       color: var(--muted);
-      font-size: 18px;
-      line-height: 1.85;
-      max-width: 58ch;
+      font-size: 15px;
+      line-height: 1.68;
+      max-width: 46ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      max-width: 720px;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .proof-item::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 9px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      background: linear-gradient(135deg, var(--accent), #34b3a8);
+      box-shadow: 0 0 0 6px rgba(15, 118, 110, 0.08);
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
+      gap: 10px;
+      margin-top: 12px;
+      max-width: 980px;
     }
 
     .stat {
-      padding: 18px;
+      padding: 14px 14px 13px;
       border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid rgba(92, 120, 165, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 251, 250, 0.88));
+      border: 1px solid rgba(24, 33, 38, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
     }
 
     .stat strong {
       display: block;
-      font-size: 26px;
+      font-size: 20px;
       color: var(--accent-deep);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .stat span {
       display: block;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .summary-box {
-      margin-top: 26px;
-      padding: 24px;
+      margin-top: 6px;
+      padding: 14px 16px;
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.76);
-      border: 1px solid rgba(92, 120, 165, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 248, 0.88));
+      border: 1px solid rgba(24, 33, 38, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      max-width: 720px;
     }
 
     .profile-card {
       display: grid;
-      grid-template-columns: 128px 1fr;
-      gap: 18px;
+      grid-template-columns: 116px 1fr;
+      gap: 14px;
       align-items: center;
-      padding: 18px;
+      padding: 14px;
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(92, 120, 165, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 250, 249, 0.90));
+      border: 1px solid rgba(24, 33, 38, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      max-width: 640px;
+      justify-self: start;
     }
 
     .profile-photo {
-      width: 128px;
-      height: 128px;
+      width: 116px;
+      height: 116px;
       object-fit: cover;
-      border-radius: 22px;
+      border-radius: 18px;
       box-shadow: 0 16px 30px rgba(23, 33, 38, 0.12);
     }
 
     .profile-meta strong {
       display: block;
-      font-size: 22px;
-      margin-bottom: 8px;
+      font-size: 20px;
+      margin-bottom: 6px;
     }
 
     .profile-meta p {
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 13px;
+      line-height: 1.6;
     }
 
     .summary-box h3 {
-      font-size: 15px;
+      font-size: 14px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .summary-box p {
-      font-size: 17px;
-      line-height: 1.85;
+      font-size: 15px;
+      line-height: 1.7;
       color: var(--text);
+    }
+
+    .summary-box strong {
+      color: var(--accent-deep);
     }
 
     .section {
       display: grid;
       grid-template-columns: 0.82fr 1.18fr;
-      gap: 24px;
-      margin-top: 24px;
+      gap: 22px;
+      margin-top: 22px;
     }
 
     .section-left {
@@ -406,8 +472,8 @@
 
     .section-left h2 {
       margin-top: 10px;
-      font-size: clamp(30px, 3.6vw, 44px);
-      line-height: 1.05;
+      font-size: clamp(28px, 3.2vw, 40px);
+      line-height: 1.08;
       letter-spacing: -0.035em;
       max-width: 9ch;
     }
@@ -415,18 +481,19 @@
     .section-left p {
       margin-top: 14px;
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
+      line-height: 1.7;
+      font-size: 15px;
       max-width: 32ch;
     }
 
     .section-card {
-      padding: 26px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(250, 251, 249, 0.90));
     }
 
     .grid {
       display: grid;
-      gap: 16px;
+      gap: 14px;
     }
 
     .info-grid {
@@ -437,18 +504,50 @@
     .timeline-item,
     .method-card,
     .contact-card {
-      padding: 22px;
+      padding: 18px;
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(92, 120, 165, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 250, 249, 0.90));
+      border: 1px solid rgba(24, 33, 38, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 172px;
+    }
+
+    .evidence-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-index {
+      display: inline-grid;
+      place-items: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--accent-deep);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
     .info-card h3,
     .timeline-item h3,
     .method-card h3,
     .contact-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .info-card p,
@@ -456,8 +555,8 @@
     .method-card p,
     .contact-card p {
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.75;
+      font-size: 14px;
+      line-height: 1.68;
     }
 
     .chip-row {
@@ -473,9 +572,10 @@
       min-height: 32px;
       padding: 0 12px;
       border-radius: 999px;
-      background: var(--accent-soft);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(15, 118, 110, 0.06));
+      border: 1px solid rgba(15, 118, 110, 0.08);
       color: var(--accent-deep);
-      font-size: 13px;
+      font-size: 12.5px;
     }
 
     .timeline {
@@ -542,17 +642,27 @@
     }
 
     .contact-card a {
+      display: inline-block;
+      max-width: 100%;
       color: var(--accent-deep);
       text-decoration: underline;
       text-decoration-color: rgba(11, 79, 74, 0.22);
       text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .contact-card p:last-child {
+      margin-top: auto;
     }
 
     .footer {
       margin-top: 24px;
-      padding: 26px 28px;
+      padding: 22px 24px;
       border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, #143c39, #0f766e);
+      background: linear-gradient(135deg, #143c39, #0f766e 68%, #165c96 100%);
       color: rgba(255, 255, 255, 0.94);
       box-shadow: 0 24px 60px rgba(20, 60, 57, 0.24);
     }
@@ -598,10 +708,82 @@
       }
     }
 
-    @media (max-width: 1040px) {
-      .hero,
+    @media (max-width: 1180px) {
+      .hero {
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 18px;
+      }
+
       .section {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .section-left {
+        max-width: 760px;
+      }
+
+      .section-left h2 {
+        font-size: clamp(28px, 4vw, 38px);
+        max-width: 12ch;
+      }
+
+      .section-left p {
+        max-width: 42ch;
+      }
+
+      .section-card {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .window-layout,
+      .info-grid,
+      .contact-grid,
+      .delivery-grid,
+      .profile-card,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 18px;
+      }
+
+      .project-window {
+        padding: 14px;
+      }
+
+      .window-layout {
+        min-height: auto;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .project-body {
+        padding: 18px;
+      }
+
+      .project-body h2 {
+        font-size: clamp(26px, 5vw, 34px);
+        max-width: 11ch;
+      }
+
+      .project-body p {
+        max-width: 36ch;
+      }
+
+      .hero-copy {
+        padding: 0;
+      }
+
+      .lead {
+        font-size: 16px;
+        max-width: 48ch;
       }
     }
 
@@ -617,14 +799,8 @@
         border-radius: 28px;
       }
 
-      .window-layout,
       .timeline-item,
-      .info-grid,
-      .method-grid,
-      .contact-grid,
-      .delivery-grid,
-      .profile-card,
-      .stats {
+      .method-grid {
         grid-template-columns: 1fr;
       }
 
@@ -632,6 +808,10 @@
       .section-card,
       .footer {
         padding: 20px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
       }
 
       .window-layout {
@@ -652,7 +832,7 @@
         <div class="brand-mark">徐</div>
         <div class="brand-copy">
           <strong>徐龙威</strong>
-          <span>品牌营销背景 · 正在转向 AI 产品经理实习方向</span>
+          <span>求职意向：AI 产品经理</span>
         </div>
       </div>
       <nav class="nav" aria-label="主导航">
@@ -661,7 +841,7 @@
         <a href="./resume-online.html">在线简历</a>
         <a href="#contact">联系我</a>
       </nav>
-      <a class="button button-primary" href="./徐龙威-个人简历-更新版.docx">下载简历</a>
+      <a class="button button-primary" href="./徐龙威简历.docx">下载简历</a>
     </header>
 
     <main>
@@ -677,38 +857,55 @@
             <aside class="sidebar">
               <div class="sidebar-label">Preview</div>
               <div class="step-list">
-                <a class="step active" href="#top">01 · Hero<br>个人定位</a>
-                <a class="step" href="#projects">02 · Project<br>AI 问答助手</a>
-                <a class="step" href="#background">03 · Work<br>新华三经历</a>
-                <a class="step" href="#background">04 · Project<br>教学平台</a>
-                <a class="step" href="#contact">05 · Contact<br>联系方式</a>
+                <a class="step active" href="#top">01<br>首页</a>
+                <a class="step" href="#background">02<br>教育经历</a>
+                <a class="step" href="#projects">03<br>主项目</a>
+                <a class="step" href="./resume-online.html">04<br>在线简历</a>
+                <a class="step" href="#contact">05<br>联系我</a>
               </div>
             </aside>
             <div class="project-body">
               <div>
-                <div class="eyebrow">Featured practice / AI product case</div>
+                <div class="eyebrow">AI 产品项目</div>
                 <h2>租房帮助中心 AI 问答助手</h2>
                 <p>
-                  一个围绕高频 FAQ 设计的 AI 问答练习项目。重点不是做“万能聊天”，
-                  而是把用户问题组织成结论、条件说明、下一步动作和引用来源的最小闭环。
+                  围绕高频 FAQ 设计 AI 问答入口，不做泛聊天，
+                  重点是让帮助中心不只是返回文章，而是能直接告诉用户下一步怎么做。
                 </p>
               </div>
               <div class="project-actions">
                 <a class="button button-primary" href="./project-househelp.html">项目详情页</a>
-                <a class="button button-secondary" href="./徐龙威-个人简历-更新版.docx">下载简历</a>
+                <a class="button button-secondary" href="./resume-online.html">在线简历</a>
               </div>
             </div>
           </div>
         </article>
 
         <div class="hero-right reveal delay-2">
+          <div class="profile-card">
+            <img class="profile-photo" src="./avatar.jpg" alt="徐龙威头像">
+            <div class="profile-meta">
+              <strong>徐龙威</strong>
+              <p>求职意向：AI 产品经理</p>
+              <p>关注大模型、RAG、Agent 等 AI 应用场景。</p>
+            </div>
+          </div>
+
           <section class="hero-copy">
-            <div class="mini-label">Personal Website</div>
-            <h1>AI 产品经理求职中，重点展示大模型应用思路与问题拆解能力。</h1>
             <p class="lead">
-              徐龙威，中国科学技术大学物流工程与管理在读，兰州大学市场营销本科毕业。
-              有品牌营销与业务协同经历，当前聚焦 AI 产品经理实习方向，持续补齐大模型、RAG、需求分析、评估闭环与跨团队协同能力。
+              求职意向：AI 产品经理。关注大模型、RAG、Agent 等 AI 应用场景，具备需求分析、方案设计、
+              评估闭环与跨团队协同推进能力。
             </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./徐龙威简历.docx">下载简历</a>
+              <a class="button button-secondary" href="./project-househelp.html">查看主项目</a>
+              <a class="button button-secondary" href="./resume-online.html">在线简历</a>
+            </div>
+            <div class="proof-list" aria-label="核心证据">
+              <div class="proof-item">有产品演示、需求沟通和迭代协同经验。</div>
+              <div class="proof-item">已完成项目页、原型、RAG 方案和评估闭环设计。</div>
+              <div class="proof-item">熟练使用 AI Coding 工具，理解大模型、RAG、Agent 场景。</div>
+            </div>
             <div class="stats">
               <div class="stat">
                 <strong>中科大</strong>
@@ -716,48 +913,77 @@
               </div>
               <div class="stat">
                 <strong>新华三</strong>
-                <span>有真实业务讲解、对接和跨部门协同经验</span>
+              <span>有产品演示、需求沟通与跨团队协同推进经验</span>
               </div>
               <div class="stat">
                 <strong>RAG</strong>
-                <span>主项目聚焦 AI 问答助手，能讲清需求、方案与指标闭环</span>
+              <span>主项目聚焦 AI 问答助手，具备需求分析、方案设计与评估闭环能力</span>
               </div>
             </div>
           </section>
 
-          <div class="profile-card">
-            <img class="profile-photo" src="./avatar.jpg" alt="徐龙威头像">
-            <div class="profile-meta">
-              <strong>徐龙威</strong>
-              <p>求职方向：AI 产品经理实习</p>
-              <p>关键词：大模型应用、RAG 场景、需求分析、评估闭环、跨团队协同。</p>
-            </div>
-          </div>
-
           <div class="summary-box">
-            <h3>为什么适合这个方向</h3>
+            <h3>岗位匹配</h3>
             <p>
-              我不是单纯从零转岗，而是在把已有的表达、协同、用户理解能力，
-              翻译成 AI 产品岗位更看重的需求收敛、方案设计和项目表达能力。
+              把已有的 <strong>表达、协同、用户理解</strong>，
+              转成 AI 产品岗位更看重的 <strong>需求拆解、方案设计、评估闭环</strong>。
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="background">
+        <div class="section-left reveal">
+          <div class="mini-label">教育与经历</div>
+          <h2>教育与经历</h2>
+          <p>
+            先看学校、经历、本科背景和 AI 项目这四个关键信号。
+          </p>
+        </div>
+        <div class="card section-card reveal delay-1">
+          <div class="grid info-grid">
+            <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">01</span><span>教育背景</span></div>
+              <h3>中科大在读</h3>
+              <p>物流工程与管理研究生，补齐机器学习、定量分析与算法应用基础。</p>
+            </article>
+
+            <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">02</span><span>工作经历</span></div>
+              <h3>新华三经历</h3>
+              <p>做过云屏项目包装、客户演示和版本协同，有需求沟通、Bug 跟踪与问题闭环经验。</p>
+            </article>
+
+            <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">03</span><span>本科背景</span></div>
+              <h3>兰大本科</h3>
+              <p>市场营销背景，具备用户研究、市场理解与流程分析基础。</p>
+            </article>
+
+            <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">04</span><span>AI 项目</span></div>
+              <h3>AI 教学项目</h3>
+              <p>文本类AI程序在工商管理专业教学中的应用研究，覆盖 AI 问答、成果评估、案例实训和后台管理。</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="section" id="projects">
         <div class="section-left reveal">
-          <div class="mini-label">Side Project</div>
-          <h2>首页只讲一个主项目就够了</h2>
+          <div class="mini-label">主项目</div>
+          <h2>租房帮助中心 AI 问答助手</h2>
           <p>
-            参考你之前发的个人求职网站，真正有效的做法不是把所有经历都铺满，而是先让人快速看到一个能被深挖的主项目。
+            围绕高频 FAQ 设计 AI 问答入口，重点验证答案是否明确、可执行、可追溯。
           </p>
         </div>
         <div class="card section-card reveal delay-1">
           <div class="grid info-grid">
             <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">01</span><span>问题定义</span></div>
               <h3>问题定义</h3>
               <p>
-                围绕租房帮助中心里的高频问题，设计 AI 问答入口。核心不是搜文章，而是直接给用户结论和下一步动作。
+                围绕租房帮助中心里的高频问题，设计 AI 问答入口，让帮助中心不只是返回文章，而是能直接告诉用户下一步怎么做。
               </p>
               <div class="chip-row">
                 <span class="chip">FAQ 场景</span>
@@ -767,20 +993,23 @@
             </article>
 
             <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">02</span><span>方案设计</span></div>
               <h3>方案设计</h3>
               <p>
-                首期只覆盖费用、签约、入住、退租四类高频问题，回答统一成“结论 + 条件说明 + 下一步动作 + 引用来源”。
+                首期只覆盖费用、签约、入住、退租四类高频问题，定义 AI 回答结构为“结论 + 条件说明 + 下一步动作 + 引用来源”。
               </p>
             </article>
 
             <article class="info-card">
-              <h3>为什么适合面试</h3>
+              <div class="evidence-label"><span class="evidence-index">03</span><span>项目完成度</span></div>
+              <h3>项目完成度</h3>
               <p>
-                已完成项目页与原型设计，也形成了 bad case 分类和一轮优化方案，适合被面试官继续追问方案取舍与迭代逻辑。
+                已完成项目页与原型设计，也形成了 bad case 分类和一轮优化方案，适合继续追问方案取舍与迭代逻辑。
               </p>
             </article>
 
             <article class="info-card">
+              <div class="evidence-label"><span class="evidence-index">04</span><span>评估闭环</span></div>
               <h3>评估闭环</h3>
               <p>
                 用解决率、转人工率、点踩率、响应时长和 bad case 分类来判断问题究竟出在入口、召回还是生成。
@@ -793,45 +1022,12 @@
         </div>
       </section>
 
-      <section class="section" id="background">
-        <div class="section-left reveal">
-          <div class="mini-label">Background</div>
-          <h2>教育和经历只保留关键证据</h2>
-          <p>
-            这里不展开成长故事，只保留最能证明你和岗位匹配的 4 组信息：研究生在读、真实工作经历、本科背景和 AI 教学项目。
-          </p>
-        </div>
-        <div class="card section-card reveal delay-1">
-          <div class="grid info-grid">
-            <article class="info-card">
-              <h3>中国科学技术大学</h3>
-              <p>物流工程与管理在读，课程覆盖机器学习、定量分析、物流算法与计算机应用。</p>
-            </article>
-
-            <article class="info-card">
-              <h3>新华三集团</h3>
-              <p>负责新华三云屏项目的产品包装、客户演示与版本迭代协同，具备需求反馈、Bug 闭环和跨团队推进经验。</p>
-            </article>
-
-            <article class="info-card">
-              <h3>兰州大学</h3>
-              <p>市场营销本科背景，具备用户、市场、流程和研究分析基础，语言能力为 CET-4。</p>
-            </article>
-
-            <article class="info-card">
-              <h3>AI 教学平台项目</h3>
-              <p>完成面向工商管理教学的智能化课堂平台功能规划，覆盖 AI 问答、成果评估、案例实训与后台管理等教学场景。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="contact">
         <div class="section-left reveal">
-          <div class="mini-label">Contact</div>
-          <h2>让对方能立刻联系到你</h2>
+          <div class="mini-label">联系与简历</div>
+          <h2>联系与简历</h2>
           <p>
-            这里我把基础联系方式和投递所需入口都放在一起了。现在已经能承接“下载简历、查看在线简历、继续联系你”这几个核心动作。
+            简历、在线版本和联系方式都放在这里。
           </p>
         </div>
         <div class="card section-card reveal delay-1">
@@ -853,14 +1049,14 @@
 
             <article class="contact-card">
               <h3>求职方向</h3>
-              <p>AI 产品经理实习</p>
+              <p>AI 产品经理</p>
             </article>
           </div>
 
           <div class="grid delivery-grid">
             <article class="contact-card">
               <h3>简历下载</h3>
-              <p><a href="./徐龙威-个人简历-更新版.docx">下载新版简历</a></p>
+              <p><a href="./徐龙威简历.docx">下载最新简历</a></p>
             </article>
 
             <article class="contact-card">
@@ -878,10 +1074,9 @@
     </main>
 
     <footer class="footer reveal delay-3">
-      <div class="mini-label" style="color: rgba(255,255,255,0.72);">Next Step</div>
+      <div class="mini-label" style="color: rgba(255,255,255,0.72);">徐龙威</div>
       <p>
-        这版现在把站点主色切成了更适合求职的雾白、石墨和青绿，把项目蓝色保留在项目展示本身，避免个人品牌和单个项目撞色。
-        同时我已经把首页自我评价重写成更适合招聘语境的表达，并补上了独立项目详情页入口。
+        求职意向：AI 产品经理，欢迎通过简历、项目页或联系方式继续了解。
       </p>
     </footer>
   </div>
